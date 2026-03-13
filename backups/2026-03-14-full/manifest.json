@@ -1,0 +1,17 @@
+{
+  "backup_date": "2026-03-14",
+  "backup_time": "2026-03-14T02:14:01+08:00",
+  "openclaw_version": "OpenClaw 2026.3.11 (29dc654)",
+  "hostname": "iv-yehn75nfnk5i3z5ni881",
+  "file_counts": {
+    "config": 3,
+    "workspace": 11,
+    "skills": 0,
+    "extensions": 2,
+    "agents": 0,
+    "system": 2,
+    "memory": 0
+  },
+  "total_size": "168K",
+  "total_files": 19
+}
