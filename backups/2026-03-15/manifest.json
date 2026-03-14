@@ -1,0 +1,11 @@
+{
+  "backup_date": "2026-03-15",
+  "backup_time": "2026-03-15T02:00:00+08:00",
+  "hostname": "iv-yehn75nfnk5i3z5ni881",
+  "file_counts": {
+    "config": 6,
+    "workspace_md": 13,
+    "extensions": 9
+  },
+  "total_size": "388K"
+}
