@@ -1,35 +1,19 @@
-# FEATURE_REQUESTS.md - 功能需求
+# FEATURE_REQUESTS.md
 
-记录用户请求但我目前没有的能力。
+用户请求的功能、改进建议。
 
-## 格式模板
+## 格式
 
 ```markdown
-## [FEAT-YYYYMMDD-XXX] 功能名称
+## YYYY-MM-DD - 功能描述
 
-**Logged**: ISO-8601 时间戳
-**Priority**: low | medium | high
-**Status**: pending | in_progress | implemented | wont_fix
-**Area**: frontend | backend | infra | tests | docs | config | memory
-
-### Requested Capability
-用户想要什么
-
-### User Context
-为什么需要，解决什么问题
-
-### Complexity Estimate
-simple | medium | complex
-
-### Suggested Implementation
-如何实现
-
-### Metadata
-- Frequency: first_time | recurring
-- Related Features: 相关功能
-
----
+**请求:** 用户想要什么
+**场景:** 什么情况下需要
+**优先级:** high / medium / low
+**状态:** pending / in_progress / done / rejected
+**备注:** 实现思路等
 ```
 
-## 需求列表
+---
 
+*初始化时间: 2026-03-14*

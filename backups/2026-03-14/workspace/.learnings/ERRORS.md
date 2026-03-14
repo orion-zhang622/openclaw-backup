@@ -1,39 +1,19 @@
-# ERRORS.md - 错误记录
+# ERRORS.md
 
-记录命令失败、API 错误、工具使用错误。
+命令失败、异常、API 错误的记录。
 
-## 格式模板
+## 格式
 
 ```markdown
-## [ERR-YYYYMMDD-XXX] 错误来源
+## YYYY-MM-DD - 错误类型
 
-**Logged**: ISO-8601 时间戳
-**Priority**: high
-**Status**: pending | in_progress | resolved
-**Area**: frontend | backend | infra | tests | docs | config | memory
-
-### Summary
-错误简述
-
-### Error
+**命令/操作:** 具体做了什么
+**错误信息:** 报错内容
+**原因:** 根因分析
+**解决:** 如何解决的
+**预防:** 如何避免再次发生
 ```
-实际错误信息
-```
-
-### Context
-- 尝试的命令/操作
-- 使用的参数
-- 环境信息
-
-### Suggested Fix
-可能的解决方案
-
-### Metadata
-- Reproducible: yes | no | unknown
-- Related Files: 相关文件
 
 ---
-```
 
-## 错误列表
-
+*初始化时间: 2026-03-14*

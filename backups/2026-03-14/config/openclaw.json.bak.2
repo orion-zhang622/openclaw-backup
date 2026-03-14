@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-14T03:19:14.736Z"
+    "lastTouchedAt": "2026-03-13T18:39:06.410Z"
   },
   "env": {
     "KIMI_API_KEY": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
@@ -121,27 +121,11 @@
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
-      },
-      "sandbox": {
-        "mode": "off"
       }
     }
   },
   "tools": {
-    "profile": "full",
-    "byProvider": {
-      "feishu": {
-        "deny": []
-      }
-    },
-    "elevated": {
-      "enabled": false,
-      "allowFrom": {
-        "feishu": [
-          "ou_1a213494d7224b2b124dbfe9acd77527"
-        ]
-      }
-    }
+    "profile": "full"
   },
   "messages": {
     "ackReactionScope": "group-mentions"
@@ -164,7 +148,7 @@
       "connectionMode": "websocket",
       "requireMention": true,
       "dmPolicy": "allowlist",
-      "groupPolicy": "allowlist",
+      "groupPolicy": "open",
       "allowFrom": [
         "ou_1a213494d7224b2b124dbfe9acd77527"
       ],
@@ -207,19 +191,19 @@
   "plugins": {
     "allow": [
       "openclaw-lark",
-      "memory-lancedb-pro"
+      "memory-lancedb"
     ],
     "load": {
       "paths": [
-        "/root/.openclaw/workspace/node_modules/memory-lancedb-pro"
+        "/usr/lib/node_modules/openclaw/extensions/memory-lancedb"
       ]
     },
     "slots": {
-      "memory": "memory-lancedb-pro"
+      "memory": "memory-lancedb"
     },
     "entries": {
       "memory-lancedb": {
-        "enabled": false,
+        "enabled": true,
         "config": {
           "embedding": {
             "apiKey": "jina_c7fca366486442629901481060442940fx8s0Oxx21lLuHEGsq2r6qVRXdIT",
@@ -303,32 +287,6 @@
       },
       "openclaw-lark": {
         "enabled": true
-      },
-      "memory-lancedb-pro": {
-        "enabled": true,
-        "config": {
-          "embedding": {
-            "apiKey": "jina_c7fca366486442629901481060442940fx8s0Oxx21lLuHEGsq2r6qVRXdIT",
-            "model": "jina-embeddings-v5-text-small",
-            "baseURL": "https://api.jina.ai/v1",
-            "dimensions": 1024,
-            "taskQuery": "retrieval.query",
-            "taskPassage": "retrieval.passage",
-            "normalized": true
-          },
-          "autoCapture": true,
-          "autoRecall": true,
-          "smartExtraction": true,
-          "extractMinMessages": 2,
-          "extractMaxChars": 8000,
-          "retrieval": {
-            "mode": "hybrid",
-            "vectorWeight": 0.7,
-            "bm25Weight": 0.3,
-            "minScore": 0.45,
-            "rerank": "none"
-          }
-        }
       }
     },
     "installs": {

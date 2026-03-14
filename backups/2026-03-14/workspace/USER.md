@@ -2,9 +2,9 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:** _待填写_
-- **Feishu Open ID:** _待填写_
-- **What to call them:** _待填写_
+- **Name:** 张泽星
+- **Feishu Open ID:** ou_1a213494d7224b2b124dbfe9acd77527
+- **What to call them:** 主人
 - **Pronouns:** _optional_
 - **Timezone:** Asia/Shanghai
 - **Notes:** _Building context over time..._

@@ -1,0 +1,22 @@
+{
+  "backup_date": "2026-03-14",
+  "backup_time": "2026-03-14T03:37:00Z",
+  "openclaw_version": "1.0.0",
+  "file_counts": {
+    "total": 32,
+    "config": 3,
+    "workspace": 25,
+    "extensions": 1,
+    "system": 3
+  },
+  "total_size": "292K",
+  "git_commit": "493c45f",
+  "hostname": "iv-yehn75nfnk5i3z5ni881",
+  "backup_items": [
+    "核心配置 (config/)",
+    "工作空间 (workspace/)",
+    "插件信息 (extensions/)",
+    "系统配置 (system/)",
+    "记忆数据 (memory/)"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-14T03:19:14.736Z"
+    "lastTouchedAt": "2026-03-13T18:48:32.249Z"
   },
   "env": {
     "KIMI_API_KEY": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
@@ -129,16 +129,22 @@
   },
   "tools": {
     "profile": "full",
-    "byProvider": {
-      "feishu": {
-        "deny": []
-      }
-    },
     "elevated": {
-      "enabled": false,
+      "enabled": true,
       "allowFrom": {
         "feishu": [
           "ou_1a213494d7224b2b124dbfe9acd77527"
+        ]
+      }
+    },
+    "byProvider": {
+      "feishu": {
+        "deny": [
+          "exec",
+          "process",
+          "write",
+          "edit",
+          "gateway"
         ]
       }
     }

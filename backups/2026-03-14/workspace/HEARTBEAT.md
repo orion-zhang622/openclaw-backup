@@ -1,5 +1,47 @@
-# HEARTBEAT.md
+# HEARTBEAT.md - 定期检查清单
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+每次心跳触发时执行以下检查。
 
-# Add tasks below when you want the agent to check something periodically.
+## 检查周期（轮换）
+
+每 4 小时一次，但不同检查按优先级轮换，避免每次都检查全部。
+
+## 检查项目
+
+### 1. 日历检查（每次必做）
+- 接下来 4 小时内是否有会议？
+- 如果有，提前提醒用户
+
+### 2. 待办检查（每次必做）
+- memory 中有未完成的待办/任务吗？
+- 有即将到期的事项吗？
+
+### 3. 系统检查（每天 2 次：12:00 和 20:00）
+- 磁盘使用率 > 80%？
+- 内存使用率 > 90%？
+- 负载是否正常？
+
+### 4. 消息检查（每天 2 次：08:00 和 16:00）
+- 飞书是否有重要未读消息？
+- 是否有被@的消息？
+
+## 执行规则
+
+1. **发现问题** → 发送详细提醒给用户
+2. **一切正常** → 回复 HEARTBEAT_OK（不打扰）
+3. **深夜时段**（23:00-08:00）→ 只检查紧急情况，普通问题延后到早上
+
+## 追踪
+
+记录检查状态到 `memory/heartbeat-state.json`
+
+```json
+{
+  "lastChecks": {
+    "calendar": "timestamp",
+    "tasks": "timestamp",
+    "system": "timestamp",
+    "messages": "timestamp"
+  }
+}
+```

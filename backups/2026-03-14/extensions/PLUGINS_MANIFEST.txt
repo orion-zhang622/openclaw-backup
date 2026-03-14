@@ -1,0 +1,27 @@
+# OpenClaw 已安装插件清单
+# 备份时间: 2026-03-14
+
+## dingtalk-connector
+Version: 0.6.0
+Path: /root/.openclaw/extensions/dingtalk-connector/
+
+## kimi-claw
+Version: 0.12.2
+Path: /root/.openclaw/extensions/kimi-claw/
+
+## kimi-search
+Version: 0.1.0
+Path: /root/.openclaw/extensions/kimi-search/
+
+## openclaw-lark
+Version: 2026.3.12
+Path: /root/.openclaw/extensions/openclaw-lark/
+
+## wecom-openclaw-plugin
+Version: 1.0.6
+Path: /root/.openclaw/extensions/wecom-openclaw-plugin/
+
+## weibo
+Version: 0.1.0
+Path: /root/.openclaw/extensions/weibo/
+
