@@ -1,0 +1,70 @@
+# Ontology Schema
+
+类型定义和约束配置。
+
+```yaml
+types:
+  Person:
+    required: [name]
+    properties:
+      name: string
+      email: string?
+      phone: string?
+      notes: string?
+  
+  Project:
+    required: [name, status]
+    properties:
+      name: string
+      status: string  # enum: [active, paused, completed, cancelled]
+      goals: string[]
+      owner: string?  # Person.id
+  
+  Task:
+    required: [title, status]
+    properties:
+      title: string
+      status: string  # enum: [open, in_progress, blocked, done]
+      due: date?
+      priority: string?  # enum: [low, medium, high, urgent]
+      assignee: string?  # Person.id
+      blockers: string[]  # Task.id[]
+  
+  Event:
+    required: [title, start]
+    properties:
+      title: string
+      start: datetime
+      end: datetime?
+      location: string?
+      attendees: string[]  # Person.id[]
+  
+  Document:
+    required: [title]
+    properties:
+      title: string
+      path: string?
+      url: string?
+      summary: string?
+
+relations:
+  has_owner:
+    from_types: [Project, Task]
+    to_types: [Person]
+    cardinality: many_to_one
+  
+  has_task:
+    from_types: [Project]
+    to_types: [Task]
+    cardinality: one_to_many
+  
+  blocks:
+    from_types: [Task]
+    to_types: [Task]
+    acyclic: true
+  
+  attends:
+    from_types: [Person]
+    to_types: [Event]
+    cardinality: many_to_many
+```
