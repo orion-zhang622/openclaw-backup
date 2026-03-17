@@ -1,0 +1,20 @@
+# 本体论知识图谱
+
+*存储格式: JSONL, 每行一条操作记录*
+
+## 记录格式
+
+```jsonl
+{"op":"create","entity":{"id":"p_001","type":"Person","properties":{"name":"Alice"}}}
+{"op":"relate","from":"proj_001","rel":"has_owner","to":"p_001"}
+```
+
+---
+
+# 实体记录
+
+{"op":"create","entity":{"id":"person_001","type":"Person","properties":{"name":"张泽星","notes":"主人，喜欢深色主题"},"created":"2026-03-14T03:04:00+08:00"}}
+{"op":"create","entity":{"id":"project_001","type":"Project","properties":{"name":"记忆系统配置","status":"completed","goals":["初始化记忆系统","配置ontology","配置self-improvement"]},"created":"2026-03-14T03:04:00+08:00"}}
+{"op":"relate","from":"project_001","rel":"has_owner","to":"person_001","created":"2026-03-14T03:04:00+08:00"}
+{"op":"create","entity":{"id":"event_001","type":"Event","properties":{"title":"记忆系统初始化","start":"2026-03-14T02:56:00+08:00","location":"飞书会话"},"created":"2026-03-14T03:04:00+08:00"}}
+{"op":"relate","from":"event_001","rel":"attends","to":"person_001","created":"2026-03-14T03:04:00+08:00"}
