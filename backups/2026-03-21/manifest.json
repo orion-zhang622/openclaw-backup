@@ -1,0 +1,17 @@
+{
+  "backup_date": "2026-03-21",
+  "backup_time": "2026-03-20T18:07:54Z",
+  "timezone": "Asia/Shanghai",
+  "openclaw_version": "OpenClaw 2026.3.13 (61d171a)",
+  "git_commit": "49573b7",
+  "file_counts": {
+    "total_files": 48,
+    "config_files": 7,
+    "workspace_files": 36,
+    "extension_files": 2,
+    "system_files": 3
+  },
+  "total_size": "380K",
+  "sensitive_data": "redacted",
+  "backup_by": "cron:c5b62a36-5137-470c-abf3-4d373c6d0061"
+}

@@ -1,0 +1,24 @@
+=== dingtalk-connector/ ===
+  "name": "@openclaw/dingtalk-connector",
+  "version": "0.6.0",
+
+=== kimi-claw/ ===
+  "name": "kimi-claw",
+  "version": "0.20.2",
+
+=== kimi-search/ ===
+  "name": "@openclaw/kimi-search",
+  "version": "0.1.3",
+
+=== openclaw-lark/ ===
+  "name": "@larksuite/openclaw-lark",
+  "version": "2026.3.12",
+
+=== wecom-openclaw-plugin/ ===
+  "name": "@wecom/wecom-openclaw-plugin",
+  "version": "1.0.6",
+
+=== weibo/ ===
+  "name": "@wecode-ai-openclaw/weibo",
+  "version": "0.1.0",
+

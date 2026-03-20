@@ -1,0 +1,144 @@
+{
+  "book_id": "test_atomic_habits",
+  "book_title": "小改进带来大改变",
+  "first_ingested": "2026-03-20T19:36:23.734495",
+  "ingestions": [
+    {
+      "date": "2026-03-20T19:36:23.734519",
+      "note": "第一次阅读",
+      "new_items": {
+        "core_arguments": 2,
+        "mind_models": 2,
+        "actionable_principles": 2,
+        "key_stories": 1,
+        "golden_quotes": 1
+      }
+    },
+    {
+      "date": "2026-03-20T19:36:40.788832",
+      "note": "第二次阅读",
+      "new_items": {
+        "core_arguments": 3,
+        "mind_models": 3,
+        "actionable_principles": 3,
+        "key_stories": 2,
+        "golden_quotes": 2
+      }
+    }
+  ],
+  "last_analysis": {
+    "stats": {
+      "core_arguments": 3,
+      "mind_models": 3,
+      "actionable_principles": 3,
+      "key_stories": 2,
+      "golden_quotes": 2
+    }
+  },
+  "cumulative_analysis": {
+    "core_arguments": [
+      {
+        "title": "小改进带来大改变",
+        "summary": "每天进步1%",
+        "chapter": "1"
+      },
+      {
+        "title": "关注系统而非目标",
+        "summary": "建立系统",
+        "chapter": "2"
+      },
+      {
+        "title": "复利效应",
+        "summary": "长期积累的力量",
+        "chapter": "3"
+      }
+    ],
+    "mind_models": [
+      {
+        "name": "习惯循环",
+        "description": "提示-渴望-反应-奖励",
+        "components": [
+          "提示",
+          "渴望",
+          "反应",
+          "奖励"
+        ],
+        "application": "识别并改变习惯"
+      },
+      {
+        "name": "身份转变",
+        "description": "从结果到身份",
+        "components": [
+          "结果",
+          "过程",
+          "身份"
+        ],
+        "application": "建立新身份"
+      },
+      {
+        "name": "习惯堆积",
+        "description": "在现有习惯上叠加",
+        "components": [
+          "当前习惯",
+          "新习惯"
+        ],
+        "application": "建立习惯链"
+      }
+    ],
+    "actionable_principles": [
+      {
+        "principle": "两分钟规则",
+        "action": "新习惯从两分钟开始",
+        "context": "开始新习惯"
+      },
+      {
+        "principle": "环境设计",
+        "action": "设计环境让好习惯更容易",
+        "context": "改变行为"
+      },
+      {
+        "principle": "习惯追踪",
+        "action": "记录习惯执行情况",
+        "context": "保持动力"
+      }
+    ],
+    "key_stories": [
+      {
+        "title": "英国自行车队",
+        "summary": "小改进赢得冠军",
+        "lesson": "持续改进的力量"
+      },
+      {
+        "title": "日本火车清洁",
+        "summary": "7分钟清洁奇迹",
+        "lesson": "系统优化"
+      }
+    ],
+    "golden_quotes": [
+      {
+        "quote": "你是你重复的结果",
+        "context": "习惯的重要性",
+        "insight": "习惯决定身份"
+      },
+      {
+        "quote": "胜利者有不同的习惯",
+        "context": "成功人士的习惯",
+        "insight": "习惯区分成败"
+      }
+    ],
+    "values_mindset": {
+      "contains_values": true,
+      "value_principles": [
+        "持续改进",
+        "耐心",
+        "系统思维"
+      ],
+      "mindset_shifts": [
+        "从目标到系统",
+        "从即时到长期",
+        "从结果到身份"
+      ]
+    }
+  },
+  "last_ingested": "2026-03-20T19:36:40.788842"
+}

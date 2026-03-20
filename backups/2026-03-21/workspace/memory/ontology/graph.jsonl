@@ -1,0 +1,24 @@
+{"op":"create","entity":{"id":"person_001","type":"Person","properties":{"name":"张泽星","notes":"主人，喜欢深色主题"},"created":"2026-03-14T03:04:00+08:00"}}
+{"op":"create","entity":{"id":"p_001","type":"Person","properties":{"name":"Alice"}}}
+{"op":"create","entity":{"id":"project_001","type":"Project","properties":{"name":"记忆系统配置","status":"completed","goals":["初始化记忆系统","配置ontology","配置self-improvement"]},"created":"2026-03-14T03:04:00+08:00"}}
+{"op":"relate","from":"project_001","rel":"has_owner","to":"person_001","created":"2026-03-14T03:04:00+08:00"}
+{"op":"create","entity":{"id":"event_001","type":"Event","properties":{"title":"记忆系统初始化","start":"2026-03-14T02:56:00+08:00","location":"飞书会话"},"created":"2026-03-14T03:04:00+08:00"}}
+{"op":"relate","from":"person_001","rel":"attends","to":"event_001","created":"2026-03-14T03:04:00+08:00"}
+{"op":"create","entity":{"id":"task_8ab9a6b9","type":"Task","properties":{"title":"修复 Ontology 脚本","status":"done","priority":"high","assignee":"person_001"},"timestamp":"2026-03-18T10:48:32+08:00"}}
+{"op":"relate","from":"project_001","rel":"has_task","to":"task_8ab9a6b9","timestamp":"2026-03-18T10:48:40+08:00"}
+{"op": "create", "entity": {"id": "project_8b2586f5", "type": "Project", "properties": {"name": "小红书自动化运营", "status": "active", "goals": ["每日养号", "内容发布", "数据追踪"], "owner": "person_001"}}, "timestamp": "2026-03-18T10:49:15.373971"}
+{"op": "create", "entity": {"id": "task_e0720ef8", "type": "Task", "properties": {"title": "执行今日养号任务", "status": "open", "priority": "medium", "assignee": "person_001"}}, "timestamp": "2026-03-18T10:49:19.573183"}
+{"op": "relate", "from": "project_8b2586f5", "rel": "has_task", "to": "task_e0720ef8", "timestamp": "2026-03-18T10:49:23.368931"}
+{"op": "create", "entity": {"id": "project_a0790709", "type": "Project", "properties": {"name": "Agent-Reach 全网内容抓取", "status": "active", "goals": ["配置12个内容平台", "建立稳定抓取通道", "积累可复用方法"], "owner": "person_001"}}, "timestamp": "2026-03-18T10:53:15.537804"}
+{"op": "create", "entity": {"id": "project_181e7b13", "type": "Project", "properties": {"name": "陈亚雯毕业论文", "status": "completed", "goals": ["完成22,000字论文", "7个数据图表", "第3-4章实证分析"], "owner": "person_001"}}, "timestamp": "2026-03-18T10:53:15.593635"}
+{"op": "create", "entity": {"id": "event_3ef23ad0", "type": "Event", "properties": {"title": "InStreet 学习 - AI企业落地实战", "start": "2026-03-15T08:00:00+08:00", "location": "线上"}}, "timestamp": "2026-03-18T10:53:15.648884"}
+{"op": "create", "entity": {"id": "task_9f49e116", "type": "Task", "properties": {"title": "配置微博抓取", "status": "blocked", "priority": "medium"}}, "timestamp": "2026-03-18T10:53:15.704450"}
+{"op": "create", "entity": {"id": "task_2dc8c5c6", "type": "Task", "properties": {"title": "配置Reddit抓取", "status": "blocked", "priority": "medium"}}, "timestamp": "2026-03-18T10:53:15.759683"}
+{"op": "create", "entity": {"id": "task_bbbf5f84", "type": "Task", "properties": {"title": "配置V2EX抓取", "status": "blocked", "priority": "medium"}}, "timestamp": "2026-03-18T10:53:15.816523"}
+{"op": "relate", "from": "person_001", "rel": "attends", "to": "event_3ef23ad0", "timestamp": "2026-03-18T10:53:24.678074"}
+{"op": "relate", "from": "project_a0790709", "rel": "has_task", "to": "task_9f49e116", "timestamp": "2026-03-18T10:53:24.736161"}
+{"op": "relate", "from": "project_a0790709", "rel": "has_task", "to": "task_2dc8c5c6", "timestamp": "2026-03-18T10:53:24.793352"}
+{"op": "relate", "from": "project_a0790709", "rel": "has_task", "to": "task_bbbf5f84", "timestamp": "2026-03-18T10:53:24.849992"}
+{"op": "create", "entity": {"id": "infrastructure_813f02f3", "type": "Infrastructure", "properties": {"name": "Maton API - Notion 剪藏", "type": "api_service", "endpoint": "https://gateway.maton.ai/notion/v1/pages", "status": "active", "notes": "剪藏功能核心服务，支持将B站视频信息写入Notion。标准REST接口，耗时2.8秒（vs MCP协议3-4分钟）"}}, "timestamp": "2026-03-20T02:04:06.279982"}
+{"op": "create", "entity": {"id": "configuration_61ab0f44", "type": "Configuration", "properties": {"name": "memory-lancedb-pro 配置", "component": "memory_plugin", "version": "pro", "status": "active", "settings": {"enableManagementTools": true, "decay": {"recencyHalfLifeDays": 30, "betaCore": 0.8, "betaWorking": 1.0, "betaPeripheral": 1.3}, "tier": {"coreAccessThreshold": 10, "workingAccessThreshold": 3, "peripheralAgeDays": 60}}}}, "timestamp": "2026-03-20T02:04:06.282262"}
+{"op": "relate", "from": "configuration_61ab0f44", "rel": "depends_on", "to": "infrastructure_813f02f3", "timestamp": "2026-03-20T02:04:12.837969"}

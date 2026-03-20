@@ -1,0 +1,45 @@
+{
+  "cached_at": "2026-03-20T19:37:15.181353",
+  "recommendations": [
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "concepts": [
+        "habit formation",
+        "behavior change",
+        "identity",
+        "small improvements",
+        "systems"
+      ],
+      "related_to": [
+        "Deep Work",
+        "The Power of Habit",
+        "Tiny Habits"
+      ],
+      "description": "建立好习惯、戒除坏习惯的实用指南",
+      "relevance_score": 3.0,
+      "matching_concepts": [],
+      "source_type": "local"
+    },
+    {
+      "title": "原子习惯",
+      "title_en": "Atomic Habits",
+      "author": "James Clear",
+      "concepts": [
+        "习惯养成",
+        "行为改变",
+        "身份认同",
+        "小改进",
+        "系统"
+      ],
+      "related_to": [
+        "深度工作",
+        "掌控习惯"
+      ],
+      "description": "细微改变带来巨大成就的实战法则",
+      "relevance_score": 3.0,
+      "matching_concepts": [],
+      "source_type": "local"
+    }
+  ]
+}

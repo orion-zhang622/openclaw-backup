@@ -1,0 +1,126 @@
+types:
+  Person:
+    required:
+    - name
+    properties:
+      name: string
+      email: string?
+      phone: string?
+      notes: string?
+  Project:
+    required:
+    - name
+    - status
+    properties:
+      name: string
+      status: string
+      goals: string[]
+      owner: string?
+  Task:
+    required:
+    - title
+    - status
+    properties:
+      title: string
+      status: string
+      due: date?
+      priority: string?
+      assignee: string?
+      blockers: string[]
+  Event:
+    required:
+    - title
+    - start
+    properties:
+      title: string
+      start: datetime
+      end: datetime?
+      location: string?
+      attendees: string[]
+  Document:
+    required:
+    - title
+    properties:
+      title: string
+      path: string?
+      url: string?
+      summary: string?
+  Infrastructure:
+    required:
+    - name
+    - type
+    properties:
+      name: string
+      type: string
+      endpoint: string?
+      status: string?
+      notes: string?
+  Configuration:
+    required:
+    - name
+    - component
+    properties:
+      name: string
+      component: string
+      version: string?
+      settings: object?
+      status: string?
+  Decision:
+    required:
+    - description
+    properties:
+      description: string
+      context: string?
+      impact: string?
+      status: string?
+relations:
+  has_owner:
+    from_types:
+    - Project
+    - Task
+    to_types:
+    - Person
+    cardinality: many_to_one
+  has_task:
+    from_types:
+    - Project
+    to_types:
+    - Task
+    cardinality: one_to_many
+  blocks:
+    from_types:
+    - Task
+    to_types:
+    - Task
+    acyclic: true
+  attends:
+    from_types:
+    - Person
+    to_types:
+    - Event
+    cardinality: many_to_many
+  depends_on:
+    from_types:
+    - Configuration
+    to_types:
+    - Infrastructure
+    cardinality: many_to_many
+  configures:
+    from_types:
+    - Configuration
+    to_types:
+    - Project
+    cardinality: many_to_many
+  made_by:
+    from_types:
+    - Decision
+    to_types:
+    - Person
+    cardinality: many_to_one
+  affects:
+    from_types:
+    - Decision
+    to_types:
+    - Project
+    - Configuration
+    cardinality: many_to_many
