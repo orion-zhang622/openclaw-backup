@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "skills": {
+    "auto-updater": {
+      "name": "Auto-Updater Skill",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=auto-updater",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "freeride-ai": {
+      "name": "Free Ride Unlimited free AI",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=freeride-ai",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "model-fallback": {
+      "name": "Multi-model automatic fallback system",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=model-fallback",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "openclaw-config-manager-skill": {
+      "name": "OpenClaw配置管理Skill",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=openclaw-config-manager-skill",
+      "source": "skillhub",
+      "version": "0.0.1"
+    },
+    "api-gateway": {
+      "name": "API Gateway",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=api-gateway",
+      "source": "skillhub",
+      "version": "1.0.54"
+    },
+    "github": {
+      "name": "Github",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=github",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "playwright-mcp": {
+      "name": "Playwright MCP",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=playwright-mcp",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "skill-creator": {
+      "name": "Skill Creator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=skill-creator",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "ontology": {
+      "name": "Ontology",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ontology",
+      "source": "skillhub",
+      "version": "0.1.2"
+    },
+    "office": {
+      "name": "Office",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=office",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "ppt-generator": {
+      "name": "description: 将用户讲稿一键生成乔布斯风极简科技感竖屏HTML演示稿。当用户需要生成PPT、演示文稿、Slides、幻灯片，或要求科技风/极简风/乔布斯风格的演示时触发此技能。输出为单个可直接运行的HTML文件。",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ppt-generator",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "baidu-search": {
+      "name": "baidu web search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=baidu-search",
+      "source": "skillhub",
+      "version": "1.1.0"
+    },
+    "humanizer": {
+      "name": "Humanizer",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=humanizer",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "tavily": {
+      "name": "Tavily AI Search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=tavily",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "python-dataviz": {
+      "name": "Python Dataviz",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=python-dataviz",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}
