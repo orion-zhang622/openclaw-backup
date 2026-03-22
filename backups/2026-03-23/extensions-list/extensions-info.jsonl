@@ -1,0 +1,332 @@
+=== dingtalk-connector ===
+{
+  "name": "@openclaw/dingtalk-connector",
+  "version": "0.6.0",
+  "description": "DingTalk (钉钉) channel plugin for OpenClaw — Stream mode with AI Card streaming",
+  "main": "plugin.ts",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build needed - jiti loads TS at runtime'"
+  },
+  "keywords": ["openclaw", "dingtalk", "channel", "stream", "ai-card"],
+  "author": "DingTalk Real Team",
+  "license": "MIT",
+  "dependencies": {
+    "dingtalk-stream": "^2.1.4",
+    "axios": "^1.6.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
+  },
+  "openclaw": {
+    "extensions": ["./plugin.ts"],
+    "channels": ["dingtalk-connector"],
+    "installDependencies": true
+  }
+}
+
+=== kimi-claw ===
+{
+  "name": "kimi-claw",
+  "version": "0.20.2",
+  "description": "OpenClaw connector that bridges a remote /gateway server with the local OpenClaw Gateway.",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "openclaw.plugin.json"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run build:internal",
+    "build:internal": "npm run clean && tsc -p tsconfig.build.json && mkdir -p dist/src && cp src/message-filter.js dist/src/message-filter.js && npm run minify:release",
+    "build:public": "npm run clean && tsc -p tsconfig.build.json && mkdir -p dist/src && cp src/message-filter.js dist/src/message-filter.js && npm run minify:release",
+    "minify:release": "for file in $(find dist -type f -name '*.js'); do terser \"$file\" --compress passes=2,dead_code=true,drop_console=true,drop_debugger=true --mangle --format comments=false --output \"$file\" -- \"$file\"; done",
+    "generate:im-proto": "node scripts/generate-im-proto.mjs",
+    "refresh:im-proto": "node scripts/refresh-im-proto.mjs",
+    "refresh:im-proto:check": "node scripts/refresh-im-proto.mjs --check",
+    "test": "node --experimental-transform-types --test tests/*.test.ts",
+    "test:cases": "node --experimental-transform-types tests/acp-case-runner.ts",
+    "test:coverage:baseline": "node --experimental-transform-types --experimental-test-coverage --test-coverage-include='src/**/*.ts' --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "2.11.0",
+    "fs-ext": "^2.1.1",
+    "node-pty": "0.10.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "1.66.0",
+    "@bufbuild/protoc-gen-es": "2.11.0",
+    "@types/node": "^25.2.2",
+    "@types/ws": "^8.18.1",
+    "terser": "^5.39.0",
+    "typescript": "^5.6.3"
+  }
+}
+
+=== kimi-claw.bak.1774160342 ===
+{
+  "name": "kimi-claw",
+  "version": "0.20.2",
+  "description": "OpenClaw connector that bridges a remote /gateway server with the local OpenClaw Gateway.",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "openclaw.plugin.json"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run build:internal",
+    "build:internal": "npm run clean && tsc -p tsconfig.build.json && mkdir -p dist/src && cp src/message-filter.js dist/src/message-filter.js && npm run minify:release",
+    "build:public": "npm run clean && tsc -p tsconfig.build.json && mkdir -p dist/src && cp src/message-filter.js dist/src/message-filter.js && npm run minify:release",
+    "minify:release": "for file in $(find dist -type f -name '*.js'); do terser \"$file\" --compress passes=2,dead_code=true,drop_console=true,drop_debugger=true --mangle --format comments=false --output \"$file\" -- \"$file\"; done",
+    "generate:im-proto": "node scripts/generate-im-proto.mjs",
+    "refresh:im-proto": "node scripts/refresh-im-proto.mjs",
+    "refresh:im-proto:check": "node scripts/refresh-im-proto.mjs --check",
+    "test": "node --experimental-transform-types --test tests/*.test.ts",
+    "test:cases": "node --experimental-transform-types tests/acp-case-runner.ts",
+    "test:coverage:baseline": "node --experimental-transform-types --experimental-test-coverage --test-coverage-include='src/**/*.ts' --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "2.11.0",
+    "fs-ext": "^2.1.1",
+    "node-pty": "0.10.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "1.66.0",
+    "@bufbuild/protoc-gen-es": "2.11.0",
+    "@types/node": "^25.2.2",
+    "@types/ws": "^8.18.1",
+    "terser": "^5.39.0",
+    "typescript": "^5.6.3"
+  }
+}
+
+=== kimi-search ===
+{
+  "name": "@openclaw/kimi-search",
+  "version": "0.1.3",
+  "description": "OpenClaw plugin for Kimi Search + Fetch tools",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "openclaw.plugin.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "keywords": [
+    "openclaw",
+    "kimi",
+    "search",
+    "fetch",
+    "web"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/openclaw-kimi-search"
+  },
+  "devDependencies": {
+    "@types/node": "^24.4.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
+
+=== openclaw-lark ===
+{
+  "name": "@larksuite/openclaw-lark",
+  "version": "2026.3.12",
+  "description": "OpenClaw Lark/Feishu channel plugin",
+  "type": "module",
+  "files": [
+    "**/*"
+  ],
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.59.0",
+    "@sinclair/typebox": "0.34.48",
+    "image-size": "^2.0.2",
+    "zod": "^4.3.6"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "channel": {
+      "id": "openclaw-lark",
+      "label": "Feishu",
+      "selectionLabel": "Lark/Feishu (飞书)",
+      "docsPath": "/channels/feishu",
+      "docsLabel": "feishu",
+      "blurb": "飞书/Lark enterprise messaging with doc/wiki/drive/task/calendar tools.",
+      "aliases": [
+        "lark"
+      ],
+      "order": 35,
+      "quickstartAllowFrom": true
+    },
+    "install": {
+      "npmSpec": "@larksuite/openclaw-lark",
+      "localPath": "extensions/feishu",
+      "defaultChoice": "npm"
+    }
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    }
+  }
+}
+
+=== wecom-openclaw-plugin ===
+{
+  "name": "@wecom/wecom-openclaw-plugin",
+  "version": "1.0.6",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "publish:release": "npm run prebuild && npm run build && npm publish"
+  },
+  "keywords": [
+    "wecom",
+    "openclaw",
+    "wecom-openclaw-plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WecomTeam/wecom-openclaw-plugin.git"
+  },
+  "homepage": "https://github.com/WecomTeam/wecom-openclaw-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/WecomTeam/wecom-openclaw-plugin/issues"
+  },
+  "description": "OpenClaw WeCom (企业微信) channel plugin",
+  "openclaw": {
+    "extensions": [
+      "./dist/index.esm.js"
+    ],
+    "channel": {
+      "id": "wecom",
+      "label": "企业微信",
+      "selectionLabel": "企业微信 (WeCom)",
+      "docsPath": "/channels/wecom",
+      "docsLabel": "wecom-openclaw-plugin",
+      "blurb": "企业微信机器人接入插件",
+      "order": 80,
+      "quickstartAllowFrom": true
+    },
+    "install": {
+      "npmSpec": "@wecom/wecom-openclaw-plugin",
+      "localPath": "extensions/wecom-openclaw-plugin",
+      "defaultChoice": "npm"
+    }
+  },
+  "dependencies": {
+    "@wecom/aibot-node-sdk": "^1.0.1",
+    "file-type": "^21.3.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "openclaw": ">=2026.1.29",
+    "rollup": "^4.9.6",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
+
+=== weibo ===
+{
+  "name": "@wecode-ai-openclaw/weibo",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "OpenClaw Weibo DM channel plugin",
+  "scripts": {
+    "test:unit": "vitest run",
+    "ci:check": "npx tsc --noEmit && npm run test:unit",
+    "build": "tsc",
+    "dev": "tsx",
+    "sim:server": "tsx weibo-server.ts"
+  },
+  "license": "MIT",
+  "files": [
+    "index.ts",
+    "src/**/*.ts",
+    "!src/**/__tests__/**",
+    "!src/**/*.test.ts"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "weibo",
+      "label": "Weibo",
+      "selectionLabel": "Weibo (微博)",
+      "docsPath": "/channels/weibo",
+      "docsLabel": "weibo",
+      "blurb": "Weibo direct message channel.",
+      "order": 80
+    }
+  },
+  "dependencies": {
+    "ws": "^8.18.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "@types/ws": "^8.5.14",
+    "@vitest/coverage-v8": "^2.1.8",
+    "openclaw": "^2026.3.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.3.1"
+  }
+}
+

@@ -1,0 +1,35 @@
+{
+  "backup_date": "2026-03-23",
+  "backup_time": "2026-03-23T02:07:00+08:00",
+  "openclaw_version": "0.8.5",
+  "file_counts": {
+    "config": 7,
+    "workspace": 11,
+    "workspace_memory": 28,
+    "extensions": 7,
+    "system": 2,
+    "total": 47
+  },
+  "total_size": "400K",
+  "git_commit": "49573b7e",
+  "extensions": [
+    "dingtalk-connector@0.6.0",
+    "kimi-claw@0.20.2",
+    "kimi-search",
+    "openclaw-lark",
+    "wecom-openclaw-plugin",
+    "weibo"
+  ],
+  "memory_stats": {
+    "total_memories": 0,
+    "scopes": 1,
+    "retrieval_mode": "hybrid",
+    "fts_support": true
+  },
+  "system_info": {
+    "os": "Linux 6.8.0-55-generic",
+    "shell": "bash",
+    "node": "v22.22.0"
+  },
+  "sensitive_data": "已脱敏处理 (API keys, tokens 已从配置中移除或掩码)"
+}

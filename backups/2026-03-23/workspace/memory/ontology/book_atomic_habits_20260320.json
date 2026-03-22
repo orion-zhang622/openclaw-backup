@@ -1,0 +1,68 @@
+{
+  "type": "Book",
+  "id": "book_atomic_habits_20260320",
+  "title": "Atomic Habits",
+  "author": "Unknown",
+  "ingested_at": "2026-03-20T21:12:54.568438",
+  "core_concepts": [
+    "基本原理　点滴变化何以意义重大",
+    "第2章　你的习惯如何塑造你的身份（反之亦然）",
+    "第3章　培养良好习惯的四步法",
+    "第一定律　让它显而易见",
+    "第二定律　让它有吸引力"
+  ],
+  "mind_models": [
+    {
+      "name": "习惯循环模型",
+      "description": "提示→渴望→反应→奖励的四步循环",
+      "components": [
+        "提示",
+        "渴望",
+        "反应",
+        "奖励"
+      ],
+      "application": "识别当前习惯的四个步骤，针对性地改变"
+    },
+    {
+      "name": "身份转变模型",
+      "description": "从结果目标转向身份认同：结果→过程→身份",
+      "components": [
+        "结果",
+        "过程",
+        "身份"
+      ],
+      "application": "先确定想成为什么样的人，再通过小胜利证明"
+    },
+    {
+      "name": "复利效应模型",
+      "description": "每天1%的微小改进，一年后提升37倍",
+      "components": [
+        "微小改进",
+        "持续积累",
+        "复利增长"
+      ],
+      "application": "专注于每天的小进步，而非一次性的大改变"
+    },
+    {
+      "name": "环境设计模型",
+      "description": "通过设计环境让好习惯更容易，坏习惯更难",
+      "components": [
+        "环境提示",
+        "减少摩擦",
+        "增加可见性"
+      ],
+      "application": "改变环境而非依赖意志力"
+    },
+    {
+      "name": "两分钟规则",
+      "description": "新习惯从两分钟版本开始，降低启动阻力",
+      "components": [
+        "最小版本",
+        "降低门槛",
+        "建立惯性"
+      ],
+      "application": "任何习惯先做一个两分钟版本"
+    }
+  ],
+  "file_path": "/tmp/atomic-habits/书荒推/原子习惯.epub"
+}

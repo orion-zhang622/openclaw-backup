@@ -1,0 +1,469 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-19T13:51:12.238Z"
+  },
+  "env": {
+    "KIMI_API_KEY": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
+    "KIMI_PLUGIN_API_KEY": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
+    "TAVILY_API_KEY": "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",
+    "BAIDU_API_KEY": "bce-v3/ALTAK-SH53eRDogellA3E1bfZ6j/d485d2b5e76db696715685da2093109cc004b0bd",
+    "MATON_API_KEY": "04vNSJ9tBS6RpCpoM4bBCFSMtgZlEiNlIKtw-2Mip9kIQrCCTxmgku6OFZA-QtWKWAIbcfrzrj4ge6MT48ei4KzAlpEL-u0pGCc",
+    "OPENROUTER_API_KEY": "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",
+    "COZE_WORKLOAD_IDENTITY_API_KEY": "pat_WldNdnHGQeThDir6A102xeDQxW92tpH770EdnhzQkAyz19CHeuyjKxd6PtI86qtB"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-06T05:36:25.425Z",
+    "lastRunVersion": "2026.2.13",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "logging": {
+    "file": "/root/.openclaw/logs/openclaw.log",
+    "redactSensitive": "tools"
+  },
+  "update": {
+    "checkOnStart": true
+  },
+  "browser": {
+    "color": "#FF6B6B",
+    "executablePath": "/usr/bin/google-chrome",
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "openclaw"
+  },
+  "auth": {
+    "profiles": {
+      "kimi-coding:default": {
+        "provider": "kimi-coding",
+        "mode": "api_key"
+      },
+      "openrouter:default": {
+        "provider": "openrouter",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "kimi-coding": {
+        "baseUrl": "https://api.kimi.com/coding",
+        "apiKey": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
+        "api": "anthropic-messages",
+        "headers": {
+          "User-Agent": "Kimi Claw Plugin",
+          "X-Kimi-Claw-ID": "19ce2c6e-e672-8bda-8000-00006aa245f8"
+        },
+        "models": [
+          {
+            "id": "k2p5",
+            "name": "k2p5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 32768,
+            "headers": {
+              "User-Agent": "Kimi Claw Plugin",
+              "X-Kimi-Claw-ID": "19ce2c6e-e672-8bda-8000-00006aa245f8"
+            }
+          }
+        ]
+      },
+      "openrouter": {
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "apiKey": "${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}",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "free:free",
+            "name": "OpenRouter Free"
+          },
+          {
+            "id": "hunter-alpha:free",
+            "name": "Hunter Alpha"
+          },
+          {
+            "id": "nvidia/nemotron-3-super-120b-a12b:free",
+            "name": "Nemotron Super"
+          },
+          {
+            "id": "healer-alpha:free",
+            "name": "Healer Alpha"
+          },
+          {
+            "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+            "name": "Nemotron Nano"
+          }
+        ]
+      },
+      "coze": {
+        "baseUrl": "https://ark.cn-beijing.volcengineapi.com",
+        "apiKey": "${COZE_WORKLOAD_IDENTITY_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "auto",
+            "name": "Coze Auto"
+          },
+          {
+            "id": "doubao-seed-1-8-251228",
+            "name": "Doubao Seed"
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "kimi-coding/k2p5",
+        "fallbacks": [
+          "free:free",
+          "hunter-alpha:free",
+          "nvidia/nemotron-3-super-120b-a12b:free",
+          "healer-alpha:free",
+          "nvidia/nemotron-3-nano-30b-a3b:free"
+        ]
+      },
+      "models": {
+        "kimi-coding/k2p5": {
+          "alias": "Kimi K2.5"
+        },
+        "openrouter/free:free": {},
+        "hunter-alpha:free": {},
+        "nvidia/nemotron-3-super-120b-a12b:free": {},
+        "healer-alpha:free": {},
+        "nvidia/nemotron-3-nano-30b-a3b:free": {}
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": true
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "reserveTokensFloor": 50000
+      },
+      "thinkingDefault": "high",
+      "verboseDefault": "off",
+      "blockStreamingCoalesce": {
+        "minChars": 20,
+        "maxChars": 800,
+        "idleMs": 300
+      },
+      "humanDelay": {
+        "mode": "off"
+      },
+      "heartbeat": {
+        "every": "3h",
+        "activeHours": {
+          "start": "08:00",
+          "end": "23:00"
+        }
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "sandbox": {
+        "mode": "off"
+      }
+    }
+  },
+  "tools": {
+    "profile": "full",
+    "byProvider": {
+      "feishu": {
+        "deny": []
+      }
+    },
+    "elevated": {
+      "enabled": false,
+      "allowFrom": {
+        "feishu": [
+          "ou_1a213494d7224b2b124dbfe9acd77527"
+        ]
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a93e92839c389cca",
+      "appSecret": "vOhU0bQRjCbRu3GSdVsL0dTnlZmsxJRi",
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "requireMention": true,
+      "dmPolicy": "allowlist",
+      "groupPolicy": "allowlist",
+      "allowFrom": [
+        "ou_1a213494d7224b2b124dbfe9acd77527"
+      ],
+      "groupAllowFrom": [],
+      "streaming": true,
+      "footer": {
+        "elapsed": true,
+        "status": true
+      }
+    }
+  },
+  "discovery": {
+    "mdns": {
+      "mode": "off"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "1ba823b2ec1d449982c37905bb99b6291621e9ecf922095a"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "allow": [
+      "openclaw-lark",
+      "memory-lancedb-pro",
+      "kimi-claw",
+      "kimi-search",
+      "coze-openclaw-plugin"
+    ],
+    "load": {
+      "paths": [
+        "/root/.openclaw/workspace/node_modules/memory-lancedb-pro",
+        "/usr/lib/node_modules/coze-openclaw-plugin"
+      ]
+    },
+    "slots": {
+      "memory": "memory-lancedb-pro"
+    },
+    "entries": {
+      "memory-lancedb": {
+        "enabled": false,
+        "config": {
+          "embedding": {
+            "apiKey": "jina_c7fca366486442629901481060442940fx8s0Oxx21lLuHEGsq2r6qVRXdIT",
+            "model": "jina-embeddings-v5-text-small",
+            "baseUrl": "https://api.jina.ai/v1",
+            "dimensions": 1024
+          },
+          "autoCapture": true,
+          "autoRecall": true,
+          "captureMaxChars": 2000
+        }
+      },
+      "feishu": {
+        "enabled": false
+      },
+      "dingtalk-connector": {
+        "enabled": true
+      },
+      "kimi-search": {
+        "enabled": true,
+        "config": {
+          "search": {
+            "baseUrl": "https://api.kimi.com/coding/v1/search"
+          },
+          "fetch": {
+            "baseUrl": "https://api.kimi.com/coding/v1/fetch"
+          }
+        }
+      },
+      "kimi-claw": {
+        "enabled": true,
+        "config": {
+          "bridge": {
+            "mode": "acp",
+            "url": "wss://www.kimi.com/api-claw/bots/agent-ws",
+            "kimiapiHost": "https://www.kimi.com/api-claw",
+            "instanceId": "connector-c-kimiclaw-test",
+            "deviceId": "c-kimiclaw-test",
+            "historyPendingTimeoutMs": 15000,
+            "shell": {
+              "enabled": true
+            },
+            "promptTimeoutMs": 300000,
+            "bot_type": "remote",
+            "token": "sk-J5EMAAKRR6Y5OTD7QOY4RJAXPG",
+            "kimiFileDownloadDir": "./openclaw/kimi/downloads",
+            "forwardThinking": false,
+            "forwardToolCalls": false,
+            "kimiCodeAPIKey": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
+            "kimiPluginAPIKey": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
+            "kimiCodeBaseURL": "https://api.kimi.com/coding"
+          },
+          "gateway": {
+            "url": "ws://127.0.0.1:18789",
+            "agentId": "main",
+            "token": "1ba823b2ec1d449982c37905bb99b6291621e9ecf922095a"
+          },
+          "retry": {
+            "baseMs": 1000,
+            "maxMs": 600000,
+            "maxAttempts": 0
+          },
+          "log": {
+            "enabled": true,
+            "verbose": false
+          },
+          "defaultModel": {
+            "enabled": true,
+            "provider": "kimi-coding",
+            "modelId": "k2p5",
+            "apiKey": "sk-kimi-zPRlmpDK64hWyCdVKykhrdiqlHKr1Ayw9Y70THtAqSloef3UdiQl40bZ86UXgqIf",
+            "baseUrl": "https://api.kimi.com/coding"
+          }
+        }
+      },
+      "weibo": {
+        "enabled": true
+      },
+      "coze-openclaw-plugin": {
+        "enabled": true,
+        "config": {
+          "apiKey": "${COZE_WORKLOAD_IDENTITY_API_KEY}"
+        }
+      },
+      "wecom-openclaw-plugin": {
+        "enabled": true
+      },
+      "openclaw-lark": {
+        "enabled": true
+      },
+      "memory-lancedb-pro": {
+        "enabled": true,
+        "config": {
+          "embedding": {
+            "apiKey": "jina_c7fca366486442629901481060442940fx8s0Oxx21lLuHEGsq2r6qVRXdIT",
+            "model": "jina-embeddings-v5-text-small",
+            "baseURL": "https://api.jina.ai/v1",
+            "dimensions": 1024,
+            "taskQuery": "retrieval.query",
+            "taskPassage": "retrieval.passage",
+            "normalized": true
+          },
+          "autoCapture": true,
+          "autoRecall": true,
+          "smartExtraction": true,
+          "extractMinMessages": 2,
+          "extractMaxChars": 8000,
+          "retrieval": {
+            "mode": "hybrid",
+            "vectorWeight": 0.7,
+            "bm25Weight": 0.3,
+            "minScore": 0.45,
+            "rerank": "none"
+          },
+          "decay": {
+            "betaCore": 0.8,
+            "betaPeripheral": 1.3,
+            "betaWorking": 1,
+            "coreDecayFloor": 0.9,
+            "frequencyWeight": 0.3,
+            "intrinsicWeight": 0.3,
+            "peripheralDecayFloor": 0.5,
+            "recencyHalfLifeDays": 30,
+            "recencyWeight": 0.4,
+            "staleThreshold": 0.3,
+            "workingDecayFloor": 0.7
+          },
+          "enableManagementTools": true,
+          "tier": {
+            "coreAccessThreshold": 10,
+            "coreCompositeThreshold": 0.7,
+            "coreImportanceThreshold": 0.8,
+            "peripheralAgeDays": 60,
+            "peripheralCompositeThreshold": 0.15,
+            "workingAccessThreshold": 3,
+            "workingCompositeThreshold": 0.4
+          }
+        }
+      }
+    },
+    "installs": {
+      "feishu": {
+        "source": "npm",
+        "spec": "@m1heng-clawd/feishu",
+        "installPath": "/root/.openclaw/extensions/feishu",
+        "version": "0.1.9",
+        "installedAt": "2026-02-14T16:39:17.689Z"
+      },
+      "dingtalk-connector": {
+        "source": "npm",
+        "spec": "https://github.com/DingTalk-Real-AI/dingtalk-moltbot-connector",
+        "installPath": "/root/.openclaw/extensions/dingtalk-connector",
+        "version": "0.6.0",
+        "installedAt": "2026-02-14T16:41:33.851Z"
+      },
+      "kimi-claw": {
+        "source": "path",
+        "sourcePath": "/tmp/tmp.uASOq0MjCT/staged_main",
+        "installPath": "/root/.openclaw/extensions/kimi-claw",
+        "version": "0.7.1",
+        "installedAt": "2026-02-21T06:26:56.098Z"
+      },
+      "weibo": {
+        "source": "path",
+        "sourcePath": "/root/openclaw-weibo",
+        "installPath": "/root/.openclaw/extensions/weibo",
+        "version": "0.1.0",
+        "installedAt": "2026-03-06T05:13:23.641Z"
+      },
+      "wecom-openclaw-plugin": {
+        "source": "npm",
+        "spec": "@wecom/wecom-openclaw-plugin",
+        "installPath": "/root/.openclaw/extensions/wecom-openclaw-plugin",
+        "version": "1.0.6",
+        "installedAt": "2026-03-09T05:44:32.857Z"
+      },
+      "openclaw-lark": {
+        "source": "npm",
+        "spec": "@larksuite/openclaw-lark",
+        "installPath": "/root/.openclaw/extensions/openclaw-lark",
+        "version": "2026.3.12",
+        "resolvedName": "@larksuite/openclaw-lark",
+        "resolvedVersion": "2026.3.12",
+        "resolvedSpec": "@larksuite/openclaw-lark@2026.3.12",
+        "integrity": "sha512-MNcDrerQrO42I09w+M8q6dwnWHMKxOnXSCLG4qNwcekjGeDmA53lIuWJtGMpjTzvDjYkoWnN+8Zg78+FRCSV9w==",
+        "shasum": "113a4f9e9802fbb6b8c65677f1ede2c36e823a72",
+        "resolvedAt": "2026-03-13T15:32:18.605Z",
+        "installedAt": "2026-03-13T15:32:28.827Z"
+      }
+    }
+  }
+}

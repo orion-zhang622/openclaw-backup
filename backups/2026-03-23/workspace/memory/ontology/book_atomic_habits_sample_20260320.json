@@ -1,0 +1,58 @@
+{
+  "type": "Book",
+  "id": "book_atomic_habits_sample_20260320",
+  "title": "Atomic Habits Sample",
+  "author": "James Clear",
+  "ingested_at": "2026-03-20T01:53:03.826343",
+  "core_concepts": [
+    "Small habits compound over time",
+    "Identity-based habits beat outcome-based habits"
+  ],
+  "mind_models": [
+    {
+      "name": "Habit Loop",
+      "description": "Cue triggers craving leads to response generates reward",
+      "components": [
+        "Cue",
+        "Craving",
+        "Response",
+        "Reward"
+      ],
+      "application": "Design environments to make good habits obvious",
+      "examples": [
+        "Phone alarm triggers workout",
+        "Visual reminders for reading"
+      ]
+    },
+    {
+      "name": "Identity Change",
+      "description": "Change identity first, outcomes follow naturally",
+      "components": [
+        "Outcome",
+        "Process",
+        "Identity"
+      ],
+      "application": "Adopt the identity of the person you want to become",
+      "examples": [
+        "I'm a runner not I run",
+        "I'm a writer not I write"
+      ]
+    },
+    {
+      "name": "Two-Minute Rule",
+      "description": "Scale down habits to two minutes to overcome resistance",
+      "components": [
+        "Gateway habit",
+        "Minimum viable action",
+        "Momentum"
+      ],
+      "application": "Make habits so easy you can't say no",
+      "examples": [
+        "Read one page",
+        "Do one pushup",
+        "Write one sentence"
+      ]
+    }
+  ],
+  "file_path": "atomic_habits_sample.pdf"
+}

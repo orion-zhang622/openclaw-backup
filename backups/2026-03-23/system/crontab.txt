@@ -1,0 +1,1 @@
+0 */4 * * * /bin/bash /root/.openclaw/backups/rclone-sync/sync.sh >> /var/log/rclone-sync.log 2>&1
